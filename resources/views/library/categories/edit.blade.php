@@ -1,7 +1,4 @@
 @extends('layouts.master')
-@section('title')
-    Update User
-@endsection
 
 @section('content')
     <div class="content-wrapper">
@@ -14,11 +11,11 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Edit User</h3>
+                                <h3 class="card-title">Category User</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form method="POST" action="{{ route('user.update', $user->id) }}">
+                            <form method="POST" action="{{ route('categories.update', $category->id) }}">
                                 @csrf
                                 @method('PUT')
 
@@ -26,42 +23,22 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">First Name</label>
                                         <input type="text" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter First Name" name="fname" value="{{ old('fname') ?? $user->fname }}">
-                                        @error('fname')
-                                            <p class="text-danger">
-                                                {{ $message }}
-                                            </p>
-                                        @enderror
+                                            placeholder="Enter First Name" name="fname" value="{{ $category->name }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Last Name</label>
                                         <input type="text" class="form-control" id=""
-                                            placeholder="Enter Last Name" name="lname" value="{{ old('lname') ?? $user->lname }}">
-                                        @error('lname')
-                                            <p class="text-danger">
-                                                {{ $message }}
-                                            </p>
-                                        @enderror
+                                            placeholder="Enter Last Name" name="lname" value="{{ $category->lname }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
                                         <input type="email" class="form-control" id="" placeholder="Enter Email"
-                                            name="email" value="{{ old('email') ?? $user->email }}">
-                                        @error('email')
-                                            <p class="text-danger">
-                                                {{ $message }}
-                                            </p>
-                                        @enderror
+                                            name="email" value="{{ $category->email }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Phone</label>
                                         <input type="number" class="form-control" id="" placeholder="Enter Phone"
-                                            name="phone" value="{{ old('phone') ?? $user->phone }}">
-                                        @error('phone')
-                                            <p class="text-danger">
-                                                {{ $message }}
-                                            </p>
-                                        @enderror
+                                            name="phone" value="{{ $category->phone }}">
                                     </div>
                                     
 
